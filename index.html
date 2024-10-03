@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Actions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        .icon-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #abacad;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chemical Supplies</h2>
+
+        <div class="button-container">
+            <style></style>
+            <!-- <button class="btn add-btn" onclick="addRow()">+ Add Row</button> -->
+            <button class="icon-btn" onclick="addRow()" title="Add Row">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button class="icon-btn" onclick="addRow()" title="Refresh">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+            <button class="icon-btn" onclick="addRow()" title="Save">
+                <i class="fa-regular fa-floppy-disk"></i>
+             </button>
+             <button class="icon-btn" onclick="addRow()" title="Delete">
+                <i class="fa-solid fa-trash"></i>
+             </button>
+            <!-- <button class="btn refresh-btn" onclick="refreshTable()">Refresh Table</button> -->
+        </div>
+
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>id.</th>
+                    <th>Chemical name</th>
+                    <th>Vender</th>
+                    <th>Density</th>
+                    <th>Viscosity</th>
+                    <th>Packaging</th>
+                    <th>Pack size</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td contenteditable="true"> Caustic Potash</td>
+                    <td contenteditable="true"> Formosa</td>
+                    <td contenteditable="true"> 2172.15</td>
+                    <td contenteditable="true"> 48.22</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">8751.90</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td contenteditable="true">Anmonium Persulfate</td>
+                    <td contenteditable="true">LG Chem</td>
+                    <td contenteditable="true">3525.92</td>
+                    <td contenteditable="true">60.631</td>
+                    <td contenteditable="true">Bag</td>
+                    <td contenteditable="true">100.00</td>
+                    <td contenteditable="true">Kg</td>
+                    <td contenteditable="true">0495.16</td>
+                </tr>
+            </thead>
+            <tbody>
+                 <!-- Rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- document.getElementById("editor").addEventListener("input", function() {
+    console.log("input event fired");
+}, false);
+<div contenteditable="true" id="editor">Please type something in here</div>  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical List Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toolbar">
+        <button onclick="addRow()">Add Row</button>
+        <button onclick="moveRowUp()">Move Row Up</button>
+        <button onclick="moveRowDown()">Move Row Down</button>
+        <button onclick="deleteRow()">Delete Row</button>
+        <button onclick="refreshTable()">Refresh Data</button>
+        <button onclick="saveTable()">Save Data</button>
+    </div>
+
+    <table id="chemicalTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Name</th>
+                <th onclick="sortTable(1)">Formula</th>
+                <th onclick="sortTable(2)">Molecular Weight</th>
+                <th onclick="sortTable(3)">Density</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Water</td>
+                <td>H₂O</td>
+                <td>18.015 g/mol</td>
+                <td>1.00 g/cm³</td>
+            </tr>
+            <tr>
+                <td>Carbon Dioxide</td>
+                <td>CO₂</td>
+                <td>44.01 g/mol</td>
+                <td>1.98 g/L</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
